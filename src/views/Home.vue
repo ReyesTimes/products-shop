@@ -1,18 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <Products />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import Products from '@/components/Products.vue';
 
 export default {
-  name: 'home',
+  data() {
+    return {
+      products: [],
+    };
+  },
+
   components: {
-    HelloWorld,
+    Products,
+  },
+
+  mounted() {
+    this.getProducts();
+  },
+
+  methods: {
+    getProducts() {
+      import('@/json/product.json')
+        .then(({ default: products }) => {
+          this.$store.commit('SET_PRODUCTS', products);
+        });
+    },
   },
 };
 </script>

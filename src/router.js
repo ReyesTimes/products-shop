@@ -19,5 +19,10 @@ export default new Router({
       name: 'myProducts',
       component: MyProducts,
     },
+    {
+      path: '*',
+      name: 'default',
+      component: Home,
+    },
   ],
 });

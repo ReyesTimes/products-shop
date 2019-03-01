@@ -23,21 +23,5 @@ export default {
   components: {
     Products,
   },
-
-  mounted() {
-    this.getProducts();
-  },
-
-  methods: {
-    /*
-     * Get products and set in store
-     */
-    getProducts() {
-      import('@/json/product.json')
-        .then(({ default: products }) => {
-          this.$store.commit('SET_PRODUCTS', products);
-        });
-    },
-  },
 };
 </script>

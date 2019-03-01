@@ -22,14 +22,13 @@
                     <span class="quantity--text">${{product.Prize | format-money}}</span>
                 </span>
                 <span role="cell" class="cell__quantity cell">
-                    <select
-                        name="quantity"
-                        v-model="myQuantities[key].quantity"
-                        @change="changeQuantity(myQuantities[key].quantity, key)"
-                    >
-                        <option :value="num" v-for="(num, key) in 9" :key="key">{{num}}</option>
-                        <option value="10+">10+</option>
-                    </select>
+                    <input 
+                        type="number" 
+                        v-model="myQuantities[key].quantity" 
+                        min="1" 
+                        @change="changeQuantity(myQuantities[key].quantity, key)" 
+                        :title="`${product.name} quantity`"
+                    />
                 </span>
             </div>
         </div>
@@ -57,7 +56,8 @@ export default {
       this.$store.dispatch('DELETE_PRODUCT', { index });
     },
 
-    changeQuantity(quantity, index) {
+    changeQuantity(value, index) {
+      let quantity = Number.parseInt(value);
       this.$store.dispatch('UPDATE_QUANTITY_PRODUCT', { index, quantity });
     },
   },
@@ -101,6 +101,12 @@ export default {
         &__quantity {
             width: 16%;
             text-align: center;
+
+            input {
+                padding: 3px 2px;
+                width: 35%;
+                text-align: left;
+            }
         }
     }
 

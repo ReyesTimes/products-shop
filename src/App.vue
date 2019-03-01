@@ -12,5 +12,9 @@ export default {
   components: {
     HeaderComponent,
   },
+
+  mounted() {
+    this.$store.dispatch('GET_MY_PRODUCTS')
+  },
 };
 </script>

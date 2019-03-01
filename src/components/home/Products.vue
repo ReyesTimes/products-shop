@@ -61,6 +61,9 @@ export default {
   },
 
   watch: {
+    /*
+     * Change value moveTime when is true in 2500 miliseconds
+     */
     moveTime(val) {
       if (val) {
         timeOut = setTimeout(() => {

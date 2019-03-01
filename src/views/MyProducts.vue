@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import NotProducts from '@/components/Cart/NotProducts.vue';
-import MyProductsList from '@/components/Cart/MyProductsList.vue';
-import TotalPrize from '@/components/Cart/TotalPrize.vue';
+import NotProducts from '@/components/cart/NotProducts.vue';
+import MyProductsList from '@/components/cart/MyProductsList.vue';
+import TotalPrize from '@/components/cart/TotalPrize.vue';
 
 import { mapState } from 'vuex';
 

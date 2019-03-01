@@ -1,28 +1,33 @@
 <template>
     <router-link class="cart__container" :to="{ name: 'myProducts' }">
-        <span class="cart__container--number" v-if="renderNumberMyProduct">{{renderNumberMyProduct}}</span>
+        <span
+            class="cart__container--number"
+            v-if="renderNumberMyProduct"
+        >
+            {{renderNumberMyProduct}}
+        </span>
         <img src="@/assets/img/cart.svg" class="cart__container--icon" />
         <span>
-            Carrito 
+            Carrito
         </span>
     </router-link >
 </template>
 
 <script>
 export default {
-    computed: {
-        /*
-         * Render number of my products
-         */
-        renderNumberMyProduct() {
-            if (this.$store.state.myProducts.length) {
-                return this.$store.state.myProducts.length
-            }
+  computed: {
+    /*
+     * Render number of my products
+     */
+    renderNumberMyProduct() {
+      if (this.$store.state.quantity) {
+        return this.$store.state.quantity;
+      }
 
-            return ''
-        }
+      return '';
     },
-}
+  },
+};
 </script>
 
 <style lang="scss">
@@ -42,7 +47,6 @@ export default {
             width: 23px;
             justify-content: center;
             font-size: 0.75em;
-            margin-right: 5px;
         }
 
         &--icon {

@@ -16,13 +16,13 @@
 </template>
 
 <script>
-import HeaderCart from '@/components/layout/HeaderCart.vue'
+import HeaderCart from '@/components/layout/HeaderCart.vue';
 
 export default {
-    components: {
-        HeaderCart
-    }
-}
+  components: {
+    HeaderCart,
+  },
+};
 </script>
 
 <style lang="scss">
@@ -57,4 +57,3 @@ export default {
         }
     }
 </style>
-

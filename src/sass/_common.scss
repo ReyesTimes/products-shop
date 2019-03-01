@@ -28,3 +28,37 @@ body {
 
     font-family: 'Roboto', sans-serif;
 }
+
+.quantity {
+    &--text{
+        position: relative;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #ffcb28;
+            left: 0px;
+            bottom: 2px;
+            z-index: -1;
+        }
+    }
+}
+
+.btn {
+    position: relative;
+    background-color: #fff;
+    border: 2px solid #ffcb28;
+    letter-spacing: 1px;
+    margin-top: 1em;
+    font-family: 'Oswald', sans-serif;
+    padding: 0.5em 0.75em;
+    border-radius: 5px;
+    text-transform: uppercase;
+    overflow: hidden;
+
+    &:hover {
+        background-color: #ffcb28;
+    }
+}

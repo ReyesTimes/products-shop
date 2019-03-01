@@ -5,6 +5,8 @@ import MyProducts from './views/MyProducts.vue';
 
 Vue.use(Router);
 
+console.log(process.env.NODE_ENV);
+
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
